@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Draggable Demo</title>
+	<style>
+		.draggable {
+			width: 200px;
+			height: 200px;
+			background: #f2c3d4;
+		}
+		.d2 {
+			background: #88c3c4;
+			margin-left: 250px;
+		}
+	</style>
+</head>
+<body>
+	<div class="draggable"></div>
+	<div class="d2 draggable"></div>
+
+	<script src="../bower_components/jquery/dist/jquery.min.js"></script>
+	<script src="../jquery.dragify.min.js"></script>
+	<script>
+	$('.draggable').dragify();
+	</script>
+</body>
+</html>
