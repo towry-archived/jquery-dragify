@@ -1,7 +1,7 @@
 /*!
  * Copyright 2015 Towry Wang
  *
- * @license MIT, http://towry.me/mit-license.html#2015
+ * @license MIT License, http://towry.me/mit-license/
  */
 
 ;(function($) {
