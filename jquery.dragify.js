@@ -50,12 +50,19 @@ $.fn.dragify = function() {
   }
 
   // s instanceof jQuery = true
-  function _getPosition(s) {
-    var left = parseInt(s.css('left'));
-    var top = parseInt(s.css('top'));
+  function _getPosition (s) {
+    var top, left;
+    
+    if (s.css('position') === 'relative') {
+      left = (parseInt(s.css('left'), 10) || 0);
+      top = (parseInt(s.css('top'), 10) || 0);
+    } else {
+      var pos = s.offset();
+      var margs = _getMargins(s);
 
-    left = isNaN(left) ? 0 : left;
-    top = isNaN(top) ? 0 : top;
+      left = pos.left - margs.left;
+      top = pos.top - margs.top;
+    }
 
     return {
       left: left,
@@ -63,7 +70,15 @@ $.fn.dragify = function() {
     }
   }
 
-  return this.each(function() {
+  // bad, too bad
+    function _getMargins (s) {
+      return {
+        left: (parseInt(s.css('marginLeft'), 10) || 0),
+        top: (parseInt(s.css('marginTop'), 10) || 0)
+      }
+    }
+
+  return this.each(function () {
     var self = $(this);
 
     if (self.css('position') === 'static') {

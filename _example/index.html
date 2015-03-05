@@ -4,6 +4,9 @@
 	<meta charset="UTF-8">
 	<title>Draggable Demo</title>
 	<style>
+		body {
+			padding: 20px;
+		}
 		.draggable {
 			width: 200px;
 			height: 200px;
@@ -12,15 +15,17 @@
 		.d2 {
 			background: #88c3c4;
 			margin-left: 250px;
+			padding-top: 10px;
+			position: absolute;
 		}
 	</style>
 </head>
 <body>
 	<div class="draggable"></div>
-	<div class="d2 draggable"></div>
+	<div style=""><div class="d2 draggable"></div></div>
 
 	<script src="../bower_components/jquery/dist/jquery.min.js"></script>
-	<script src="../jquery.dragify.min.js"></script>
+	<script src="../jquery.dragify.js"></script>
 	<script>
 	$('.draggable').dragify();
 	</script>
